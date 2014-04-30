@@ -1,7 +1,7 @@
 
 name 'ganeti-webmgr'
-maintainer 'CHANGE ME'
-homepage 'CHANGEME.com'
+maintainer 'Lance Albertson'
+homepage 'https://code.osuosl.org/projects/ganeti-webmgr'
 
 replaces        'ganeti-webmgr'
 install_path    '/opt/ganeti-webmgr'
@@ -12,7 +12,7 @@ build_iteration 1
 dependency 'preparation'
 
 # ganeti-webmgr dependencies/components
-# dependency 'somedep'
+dependency 'ganeti-webmgr'
 
 # version manifest file
 dependency 'version-manifest'
