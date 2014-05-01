@@ -2,6 +2,7 @@ name "ganeti-webmgr"
 
 dependency 'python'
 dependency 'pip'
+dependency 'sqlite'
 
 default_version "develop"
 
