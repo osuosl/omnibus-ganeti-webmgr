@@ -18,7 +18,12 @@
 name "python"
 default_version "2.7.5"
 
+rhel_family = ["centos", "redhat"]
+dbmliborder = "gdbm"
+dbmliborder += ":bdb" if rhel_family.include?(platform)
+
 dependency "gdbm"
+dependency "bdb" if rhel_family.include?(platform)
 dependency "ncurses"
 dependency "zlib"
 dependency "openssl"
@@ -39,7 +44,7 @@ build do
   command ["./configure",
            "--prefix=#{install_dir}/embedded",
            "--enable-shared",
-           "--with-dbmliborder=gdbm"].join(" "), :env => env
+           "--with-dbmliborder=#{dbmliborder}"].join(" "), :env => env
   command "make", :env => env
   command "make install", :env => env
 
